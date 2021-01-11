@@ -16,6 +16,8 @@ const (
 var (
 	s1 string = "s1"
 	s2 string //不赋值那么s2为默认值""
+	s3 int    //默认值为0
+	s4 bool   //默认值为false
 )
 
 const ()
@@ -29,4 +31,6 @@ func main() {
 	fmt.Printf("%v\n", f)
 	fmt.Printf("%v\n", s1)
 	fmt.Printf("%v\n", s2)
+	fmt.Printf("%v\n", s3)
+	fmt.Printf("%v\n", s4)
 }
