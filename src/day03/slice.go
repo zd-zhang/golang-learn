@@ -13,6 +13,10 @@ func main() {
 	fmt.Printf("长度:len(sl1)=%d 容量:cap(sl1)=%d\n", len(sl1), cap(sl1))
 	fmt.Printf("长度:len(sl2)=%d 容量:cap(sl2)=%d\n", len(sl2), cap(sl2))
 	fmt.Printf("长度:len(sl3)=%d 容量:cap(sl3)=%d\n", len(sl3), cap(sl3))
+	//必须用原来的切片接收append的返回值
+	sl3 = append(sl3, 1)
+	fmt.Printf("长度:len(sl3)=%d 容量:cap(sl3)=%d\n", len(sl3), cap(sl3))
+	//append如果原来容量放不下就会换一个新的底层数组
 	sl3 = append(sl3, 1)
 	fmt.Printf("长度:len(sl3)=%d 容量:cap(sl3)=%d\n", len(sl3), cap(sl3))
 	var s1 []int
@@ -26,4 +30,11 @@ func main() {
 	fmt.Println(s2 == nil) //false
 	fmt.Println(s3 == nil) //false
 	fmt.Println(len(s1), len(s2), len(s_2), len(s3))
+	ss1 := []int{1, 2, 3}
+	ss2 := ss1
+	ss3 := make([]int, 3)
+	//将ss1中的所有元素复制给ss3
+	copy(ss3, ss1)
+	ss1[0] = 0
+	fmt.Println(ss1, ss2, ss3)
 }
